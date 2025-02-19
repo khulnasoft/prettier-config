@@ -22,10 +22,10 @@ jobs:
           git checkout main
           git merge --no-edit upstream/main || true
 
-      - name: Cherry-pick Custom Changes
+      - name: main-pick Custom Changes
         run: |
-          git fetch origin refs/heads/cherry:refs/remotes/origin/cherry
-          git cherry-pick origin/cherry || true
+          git fetch origin refs/heads/main:refs/remotes/origin/main
+          git main-pick origin/main || true
 
       - name: Push Changes
         run: |
