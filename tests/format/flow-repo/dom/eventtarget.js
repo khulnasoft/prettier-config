@@ -19,7 +19,10 @@ let tests = [
 
   function() {
     window.onmessage = (event: MessageEvent) => {
-      (event.target: window);
+      // Only accept messages from our trusted origin
+      if (event.origin === 'https://www.example.com') {
+        (event.target: window);
+      }
     };
   },
 ];
